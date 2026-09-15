@@ -270,6 +270,9 @@ textarea{min-height:70px;resize:vertical}
   nav .links{display:flex}
   nav .menu{display:none}
   .venues{grid-template-columns:1fr 1fr;gap:clamp(40px,5vw,72px)}
+  /* desktop: enlarge the Our story card so both background photos scale up */
+  .story-hero{width:min(940px,94vw);min-height:clamp(720px,86vh,940px)}
+  .story-hero .story-copy{max-width:760px;margin-inline:auto}
 }
 
 /* mobile menu panel */
@@ -882,6 +885,8 @@ textarea{min-height:70px;resize:vertical}
       fig.addEventListener('mouseleave',()=>{fig.style.transform='';}); }); }
 
   /* rsvp */
+  /* ===== PASTE YOUR GOOGLE APPS SCRIPT WEB APP URL BETWEEN THE QUOTES BELOW ===== */
+  const RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwK__s7xGwXnX3jDp5eCnXAVft6D_hwiRukbyjFAlp5urX930YEi9QlKZG1U5o-T6oM/exec';
   const form=document.getElementById('rsvpForm'),thanks=document.getElementById('thanks'),statusEl=document.getElementById('status');
   const gw=document.getElementById('guestsWrap');
   function tog(){const y=form.attending.value==='yes';gw.style.display=y?'':'none';}
@@ -895,6 +900,7 @@ textarea{min-height:70px;resize:vertical}
       at:new Date().toISOString()};
     if(!data.name){form.name.focus();statusEl.textContent='Please add your name so we know who to expect.';return;}
     if(hasStore){try{await window.storage.set('rsvp:'+Date.now()+'-'+Math.random().toString(36).slice(2,7),JSON.stringify(data),true);}catch(err){}}
+    if(RSVP_ENDPOINT){try{await fetch(RSVP_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});}catch(err){}}
     const t=document.getElementById('thanksTitle'),b=document.getElementById('thanksBody');
     if(data.attending==='yes'){t.textContent='We can\u2019t wait to see you';b.textContent='Thank you, '+data.name+'. We\u2019ve got you down for '+data.guests+(data.guests===1?' seat.':' seats.');}
     else{t.textContent='We\u2019ll miss you';b.textContent='Thank you for letting us know, '+data.name+'. We\u2019ll raise a glass to you.';}
