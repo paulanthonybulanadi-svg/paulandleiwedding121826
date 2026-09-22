@@ -605,6 +605,18 @@ textarea{min-height:70px;resize:vertical}
 .rsvp input[type=radio],.rsvp input[type=checkbox]{accent-color:var(--blue-deep)}
 @media(min-width:761px){.attire-tiers{align-items:start}.attire-tiers .tier-fig{height:clamp(230px,30vw,360px)}}
 @media(min-width:1100px){.ent-grid{grid-template-columns:auto auto;justify-content:center}.ent-grid span{white-space:nowrap}}
+
+/* closing: text in the sky, couple clear */
+.closing{align-items:flex-start;background-position:50% 33%}
+@media (min-width:761px){.closing{min-height:clamp(100svh,95vw,1400px);background-position:50% 27%;padding-top:96px}}
+.closing::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(241,245,250,.86) 0%,rgba(241,245,250,.7) 24%,rgba(241,245,250,.32) 40%,rgba(241,245,250,0) 54%)}
+.closing-inner{margin-top:clamp(10px,4vh,48px)}
+.closing .rule{margin:18px auto}
+.closing .meta{margin-top:14px}
+.closing .meta .dt,.closing .meta .ht{display:block}
+.closing .meta .ht{margin-top:6px}
+.closing .fine{color:#4c5c6e;margin-top:14px;letter-spacing:.08em}
+@media (max-width:760px){.closing{background-position:50% 30%}.closing::after{background:linear-gradient(180deg,rgba(241,245,250,.9) 0%,rgba(241,245,250,.74) 28%,rgba(241,245,250,.3) 44%,rgba(241,245,250,0) 56%)}.closing{padding-top:34px}.closing-inner{margin-top:0}.closing .rule{margin:12px auto}.closing .meta{margin-top:10px}.closing .fine{margin-top:10px}}
 </style>
 </head>
 <body>
@@ -1009,7 +1021,7 @@ textarea{min-height:70px;resize:vertical}
     <div class="forever">Forever starts here.</div>
     <hr class="rule"/>
     <p class="thanks-line">Thank you for being part of our story.</p>
-    <div class="meta tags">December 18, 2026 &#183; <span class="ht">#HaPAULlyEverAfterWithLEI</span></div>
+    <div class="meta tags"><span class="dt">December 18, 2026</span><span class="ht">#HaPAULlyEverAfterWithLEI</span></div>
     <div class="fine">Made with love.</div>
   </div>
 </section>
