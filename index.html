@@ -180,7 +180,7 @@ section{padding-block:clamp(58px,10.5vw,158px)}
 .attire-tiers .s{font-family:var(--serif);font-style:italic;font-size:clamp(19px,2.2vw,24px);color:var(--muted);margin:.15em 0 .45em}
 .attire-tiers figcaption p{font-family:var(--sans);font-size:13.5px;color:#495868;max-width:30ch;margin:0 auto;line-height:1.55}
 .bride-note{font-family:var(--serif);font-style:italic;font-weight:600;font-size:clamp(20px,2.8vw,28px);color:var(--blue-deep);text-align:center;margin:clamp(30px,4vw,44px) auto 0;max-width:34ch;padding:clamp(18px,3vw,26px) clamp(22px,4vw,34px);background:rgba(235,241,248,.85);border:1px solid var(--silver-lt);border-radius:14px;box-shadow:0 12px 30px -20px rgba(20,30,45,.5)}
-.bride-note::before,.bride-note::after{content:"\2014";color:var(--gold);font-style:normal;margin:0 .4em;opacity:.7}
+.bride-note .bn-dash{color:var(--gold);font-style:normal;opacity:.7}.bride-note .bn-keep{white-space:nowrap}
 @media(max-width:760px){
   .attire-tiers{grid-template-columns:1fr;gap:30px}
   /* image slid to the left, name + description to its right */
@@ -599,6 +599,12 @@ textarea{min-height:70px;resize:vertical}
   /* prevent horizontal wobble from corner decorations on phones */
   html,body{overflow-x:hidden}
   html{max-width:100%}
+
+/* polish */
+.qr-grid{margin-top:clamp(22px,3vw,30px)!important}
+.rsvp input[type=radio],.rsvp input[type=checkbox]{accent-color:var(--blue-deep)}
+@media(min-width:761px){.attire-tiers{align-items:start}.attire-tiers .tier-fig{height:clamp(230px,30vw,360px)}}
+@media(min-width:1100px){.ent-grid{grid-template-columns:auto auto;justify-content:center}.ent-grid span{white-space:nowrap}}
 </style>
 </head>
 <body>
@@ -830,8 +836,8 @@ textarea{min-height:70px;resize:vertical}
       <div class="ent-label"><svg class="ent-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11.2 12 4l8.5 7.2"/><path d="M5.8 9.6V20h12.4V9.6"/><path d="M12 17.2c-2.1-1.4-3.2-2.5-3.2-3.8 0-1 .8-1.7 1.7-1.7.6 0 1.1.3 1.5.9.4-.6.9-.9 1.5-.9.9 0 1.7.7 1.7 1.7 0 1.3-1.1 2.4-3.2 3.8z"/></svg>Our Parents</div>
       <p class="ent-desc">The ones who raised us, loved us first, and taught us what it means to build a home together.</p>
       <div class="ent-duo ent-duo-keep2">
-        <div class="ent-cell"><div class="ent-colhead">Parents of the Bride</div><div class="ent-names">Mrs. Laarni Caaling<br/>Mr. Vincent Dela Cruz</div></div>
-        <div class="ent-cell"><div class="ent-colhead">Parents of the Groom</div><div class="ent-names">Mrs. Vangelyn Bulanadi<br/>Mr. Edwin Bulanadi</div></div>
+        <div class="ent-cell"><div class="ent-colhead">Parents of the Bride</div><div class="ent-names">Mr. Vincent Dela Cruz<br/>Mrs. Laarni Caaling</div></div>
+        <div class="ent-cell"><div class="ent-colhead">Parents of the Groom</div><div class="ent-names">Mr. Edwin Bulanadi<br/>Mrs. Vangelyn Bulanadi</div></div>
       </div>
     </div>
 
@@ -870,7 +876,7 @@ textarea{min-height:70px;resize:vertical}
     </div>
 
     <div class="ent-group reveal">
-      <div class="ent-label">Secondary Sponsors</div>
+      <div class="ent-label"><svg class="ent-glyph" viewBox="0 0 24 24" aria-hidden="true"><g transform="translate(-1.6 -2.6) scale(1.2)" style="stroke-width:1.25"><path d="M9.2 17.4C6.1 15.3 4.4 13.6 4.4 11.6c0-1.5 1.2-2.6 2.5-2.6.9 0 1.7.5 2.3 1.4.6-.9 1.4-1.4 2.3-1.4 1.3 0 2.5 1.1 2.5 2.6 0 2-1.7 3.7-4.8 5.8z"/><path d="M13.6 8.2c.6-.8 1.3-1.2 2.1-1.2 1.3 0 2.4 1 2.4 2.5 0 1.8-1.5 3.4-4.2 5.3"/></g></svg>Secondary Sponsors</div>
       <p class="ent-desc">Married couple friends who perform the wedding rites &#8212; each a symbol of the life we&#8217;re promising to build.</p>
       <div class="ent-rite caption-first"><svg class="ent-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="8.5" width="6" height="12.5" rx="1.2"/><path d="M8 21h8"/><path d="M12 8.5V6"/><path d="M12 6c0-1.5 1.5-1.9 1.5-3.2 0-.9-.7-1.3-1.5-1.3s-1.5.4-1.5 1.3C10.5 4.1 12 4.5 12 6z"/></svg><span class="sym">Candle</span><span class="mean">Lighting our way with God&#8217;s guiding light</span><span class="ppl">Mr. Christian Villanueva &amp; Mrs. Nica Villanueva</span></div>
       <div class="ent-rite caption-first"><svg class="ent-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.6c-3.6 0-5.4 2.7-5.4 6.2V20"/><path d="M12 4.6c3.6 0 5.4 2.7 5.4 6.2V20"/><path d="M9.4 4.2c0 1.4 1.2 2.2 2.6 2.2s2.6-.8 2.6-2.2"/><path d="M6.6 19c1.4 0 1.4-1.7 2.7-1.7s1.4 1.7 2.7 1.7 1.4-1.7 2.7-1.7 1.4 1.7 2.7 1.7"/></svg><span class="sym">Veil</span><span class="mean">Draping the veil that clothes us as one</span><span class="ppl">Mr. Jayson Reynald Elve&ntilde;a &amp; Mrs. Patricia An Bernadette Elve&ntilde;a</span></div>
@@ -878,7 +884,7 @@ textarea{min-height:70px;resize:vertical}
     </div>
 
     <div class="ent-group reveal">
-      <div class="ent-label">Flower Girls &amp; Bearers</div>
+      <div class="ent-label"><svg class="ent-glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V9.5"/><path d="M12 15c-2.6 0-4.4-1.5-4.9-3.9 2.6-.1 4.4 1.3 4.9 3.9z"/><path d="M12 12.6c2.6 0 4.4-1.5 4.9-3.9-2.6-.1-4.4 1.3-4.9 3.9z"/><circle cx="12" cy="6.2" r="2.6"/></svg>Flower Girls &amp; Bearers</div>
       <p class="ent-desc">Our littlest members, leading the way with petals and carrying the symbols of our vows.</p>
       <div class="ent-rite"><svg class="ent-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.4" r="2.1"/><circle cx="7.3" cy="10.8" r="2.1"/><circle cx="16.7" cy="10.8" r="2.1"/><circle cx="9.1" cy="16.3" r="2.1"/><circle cx="14.9" cy="16.3" r="2.1"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg><span class="sym">Flower Girls</span><span class="ppl">Pauline Lexi Bulanadi<br/>Amethyst Skye Bulanadi<br/>Claudia Gabrielle Macutay<br/>Rianne Pinlac</span></div>
       <div class="ent-rite"><svg class="ent-ico" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="8.6" rx="6" ry="2.4"/><path d="M6 8.6v3.2c0 1.3 2.7 2.4 6 2.4s6-1.1 6-2.4V8.6"/><path d="M6 11.8v3.4c0 1.3 2.7 2.4 6 2.4s6-1.1 6-2.4v-3.4"/></svg><span class="sym">Coin (Arrhae) Bearer</span><span class="ppl">Vincent Dela Cruz Jr.</span><span class="mean">The coins &#8212; a pledge to provide for one another</span></div>
@@ -891,7 +897,7 @@ textarea{min-height:70px;resize:vertical}
       <div class="ent-names">Princess Marnifer Caaling &amp; Sophia Marie Bulanadi</div>
     </div>
 
-    <hr class="rule reveal" style="margin:clamp(40px,6vw,64px) auto 0"/>
+    <hr class="rule reveal" style="width:120px;height:2px;margin:clamp(44px,6vw,64px) auto calc(-1 * clamp(24px,4vw,48px))"/>
   </div>
 </section>
 
@@ -917,14 +923,14 @@ textarea{min-height:70px;resize:vertical}
 
     <div class="palette reveal"><div class='sw'><i style='background:#7c96ae'></i><span>Dusty Blue</span></div><div class='sw'><i style='background:#bfbbbc'></i><span>Silver</span></div><div class='sw'><i style='background:#72829c'></i><span>Slate Blue</span></div><div class='sw'><i style='background:#172f4e'></i><span>Navy Blue</span></div><div class='sw'><i style='background:#cdc9c9'></i><span>Light Gray</span></div><div class='sw'><i style='background:#aca8a7'></i><span>Silver Gray</span></div></div>
 
-    <p class="bride-note reveal">Kindly reserve white &amp; ivory for the bride.</p>
+    <p class="bride-note reveal"><span class="bn-dash">&#8212;</span>&nbsp;Kindly reserve white &amp; ivory for the <span class="bn-keep">bride.&nbsp;<span class="bn-dash">&#8212;</span></span></p>
   </div>
 </section>
 
 <section id="gifts" class="gifts">
   <div class="narrow">
     <div class="eyebrow reveal">With love</div>
-    <h2 class="heading reveal">A Little Something for Our Next Chapter</h2>
+    <h2 class="heading reveal">A little something for our next chapter.</h2>
     <p class="prose reveal" style="margin:18px auto 0">Having you with us as we begin this next chapter is more than enough, and your presence will always be the gift we treasure most.</p>
     <p class="prose reveal" style="margin:14px auto 0">If you wish to give something beyond your presence, a monetary gift toward our future together would be sincerely appreciated as we build our home and life as a family.</p>
     <p class="prose reveal" style="margin:14px auto 0">For your convenience, a gift envelope will also be available at the venue. You may also send your gift securely through InstaPay using the QR code below.</p>
@@ -986,11 +992,11 @@ textarea{min-height:70px;resize:vertical}
     <div class="eyebrow reveal">Details</div>
     <h2 class="heading reveal">Good to know.</h2>
     <div class="reveal" style="margin-top:clamp(30px,4vw,48px)">
-      <div class="qa"><h3>A Little Extra Travel Time</h3><p>December traffic can be especially unpredictable. If you're coming from Metro Manila, we kindly recommend leaving early and allowing extra travel time going to Rizal so you can arrive comfortably and enjoy the celebration with us.</p></div>
+      <div class="qa"><h3>A little extra travel time</h3><p>December traffic can be especially unpredictable. If you're coming from Metro Manila, we kindly recommend leaving early and allowing extra travel time going to Rizal so you can arrive comfortably and enjoy the celebration with us.</p></div>
       <div class="qa"><h3>Getting there &amp; parking</h3><p>The ceremony will be at St. John the Baptist in Taytay, followed by the reception at Villa Ardin in Cainta. The venues are about 15 minutes apart. Free parking is available at both. Please allow extra time for traffic.</p></div>
       <div class="qa"><h3>Cocktail hour</h3><p>After the ceremony, enjoy some food and drinks while we take a few photos. Each guest will receive a food stub for the cocktail hour.</p></div>
       <div class="qa"><h3>Photography &amp; phones</h3><p>Feel free to take photos and videos throughout the celebration. During the ceremony, we kindly ask that phones and cameras be kept away so everyone can be fully present and our photographers can capture the moments beautifully.</p></div>
-      <div class="qa"><h3>Snap &amp; Share</h3><p>Capture the moments and share them with us! &#128248; We&#8217;d love to see the celebration through your eyes.</p><p class="ht">#HaPAULlyEverAfterWithLEI</p></div>
+      <div class="qa"><h3>Snap &amp; share</h3><p>Capture the moments and share them with us! &#128248; We&#8217;d love to see the celebration through your eyes.</p><p class="ht">#HaPAULlyEverAfterWithLEI</p></div>
       <div class="qa"><h3>RSVP</h3><p>Kindly RSVP by the date indicated on your invitation so we can prepare everything for you.</p></div>
     </div>
   </div>
@@ -1003,7 +1009,7 @@ textarea{min-height:70px;resize:vertical}
     <div class="forever">Forever starts here.</div>
     <hr class="rule"/>
     <p class="thanks-line">Thank you for being part of our story.</p>
-    <div class="meta tags">18 December 2026 &#183; <span class="ht">#HaPAULlyEverAfterWithLEI</span></div>
+    <div class="meta tags">December 18, 2026 &#183; <span class="ht">#HaPAULlyEverAfterWithLEI</span></div>
     <div class="fine">Made with love.</div>
   </div>
 </section>
