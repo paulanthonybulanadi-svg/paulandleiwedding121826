@@ -1107,7 +1107,7 @@ textarea{min-height:70px;resize:vertical}
     if(hasStore){try{await window.storage.set('rsvp:'+Date.now()+'-'+Math.random().toString(36).slice(2,7),JSON.stringify(data),true);}catch(err){}}
     if(RSVP_ENDPOINT){try{await fetch(RSVP_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(data)});}catch(err){}}
     const t=document.getElementById('thanksTitle'),b=document.getElementById('thanksBody');
-    if(data.attending==='yes'){t.textContent='We can\u2019t wait to see you';b.textContent='Thank you, '+data.name+'. We\u2019ve got you down for '+data.guests+(data.guests===1?' seat.':' seats.');}
+    if(data.attending==='yes'){t.textContent='We can\u2019t wait to see you';b.textContent='Thank you, '+data.name+'. We\u2019re delighted to celebrate with you. Kindly wait for our confirmation of your reserved seats.';}
     else{t.textContent='We\u2019ll miss you';b.textContent='Thank you for letting us know, '+data.name+'. We\u2019ll raise a glass to you.';}
     form.style.display='none';thanks.classList.add('show');thanks.scrollIntoView({behavior:'smooth',block:'center'});});
   document.getElementById('editRsvp').addEventListener('click',()=>{thanks.classList.remove('show');form.style.display='';statusEl.textContent='';refresh();form.scrollIntoView({behavior:'smooth',block:'center'});});
